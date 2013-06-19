@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Slider</title>
+
+	<link rel="stylesheet" href="css/reset.css" />
+	<link rel="stylesheet" href="css/screen.css" />
+	
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+</head>
+<body>
+
+<div id="slider_container">
+	<img src="images/09-Adobe_Carved.png" />
+	<img src="images/10-Adobe_Photoshop_Gradient.png" />
+	<img src="images/11-Adobe_Illustrator_Carved.png" />
+	<img src="images/12-Adobe_After_Effects_Carved.png" />
+	<img src="images/13-Adobe_Dreamweaver_Carved.png" />
+	<img src="images/14-Adobe_Indesign_Carved.png" />
+</div>
+
+<!-- Libs -->
+<script src='js/mootools-core-1.4.5.js'></script>
+<script src='js/modernizer.js'></script>
+
+<!-- Slider files -->
+<script src='js/slider/requestAnimationFrame.js'></script>
+<script src='js/slider/input.js'></script>
+<script src='js/slider/slider.js'></script>
+
+<!-- Slider initialization -->
+<script>
+	new ns.Slider("slider_container", 0.6);
+</script>
+
+</body>
+</html>
