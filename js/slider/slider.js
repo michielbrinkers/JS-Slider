@@ -26,6 +26,10 @@ ns.Slider = (function(){
 			this.id = id;
 			this.margin = margin || this.margin;
 
+			// Apply default bindings
+			this.invalidate = this.invalidate.bind(this);
+			this.update = this.update.bind(this);
+
 			var container = this.$container = $(id);
 			this.applyTranslation(container.style, 0, 0, 0);
 
@@ -42,7 +46,7 @@ ns.Slider = (function(){
 
 			// Apply css, reparent the children to the scroll element and fill $children
 			container.getChildren().each(function(item, index, array){
-				item.onload = this.handleImageLoaded.bind(this);
+				item.onload = this.invalidate;
 				var $item = $(item);
 				$item.setStyles(css);
 				$item.inject(element);
@@ -52,14 +56,12 @@ ns.Slider = (function(){
 			// Add the scroll element to the container
 			element.inject(container);
 
-			this.invalidated = true;
-
 			// Bind update and call it once to start the update cycle
-			this.update = this.update.bind(this);
+			this.invalidated = true;
 			this.update();
 		},
 
-		handleImageLoaded: function(event){
+		invalidate: function(){
 			this.invalidated = true;
 		},
 
