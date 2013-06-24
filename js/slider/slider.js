@@ -130,7 +130,7 @@ ns.Slider = (function(){
 						}
 					}
 				}
-				this.prevTouch = touch;
+				this.prevTouch = Object.clone(touch);
 			}
 		},
 
